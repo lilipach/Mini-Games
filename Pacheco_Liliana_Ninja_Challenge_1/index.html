@@ -1,0 +1,44 @@
+<html>
+    <body>
+        <div id="background"> 
+            <div id="character" style='position:absolute; 
+                 background-image:url("image/naruto.jpg"); width:54px; height:80px;'>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            var horizontalPosition = window.innerWidth/2;
+            var vertialPosition = window.innerHeight/2;
+    
+            document.getElementById("character").style.left = horizontalPosition + "px";
+            document.getElementById("character").style.top = vertialPosition + "px";
+
+            console.log("Horizontal Position: "  + horizontalPosition);
+            console.log("Vertical Position: " + vertialPosition);
+
+            document.onkeydown = function(e){
+                console.log(e)
+
+                if(e.keyCode == 37){//Left
+                    if( horizontalPosition > 0)
+                        horizontalPosition = horizontalPosition - 10;
+                }
+                else if(e.keyCode == 39){//Right
+                    if(horizontalPosition < window.innerWidth - 50)
+                        horizontalPosition = horizontalPosition + 10;
+                }
+                else if(e.keyCode == 40){//Down
+                    if(vertialPosition < window.innerHeight - 80)
+                        vertialPosition = vertialPosition + 10;
+                }
+                else if(e.keyCode == 38 ){//Up
+                    if(vertialPosition > 0)
+                        vertialPosition = vertialPosition - 10;
+                }
+                
+                document.getElementById("character").style.left = horizontalPosition + "px";
+                document.getElementById("character").style.top = vertialPosition + "px";
+            }
+        </script>
+    </body>
+</html>
