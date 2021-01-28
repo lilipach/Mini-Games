@@ -1,0 +1,126 @@
+<html>
+    <body>
+        <div id="background"> 
+            <div id="character" style='position:absolute; 
+                 background-image:url("image/naruto_down2.png"); width:26px; height:40px;'>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            var horizontalPosition = window.innerWidth/2;
+            var vertialPosition = window.innerHeight/2;
+            var dimensions = [[26, 42], [26, 40], [26, 42], 
+                              [26, 40], [26, 40], [26, 40], 
+                              [31, 41], [34, 42], [34, 41], 
+                              [34, 43], [34, 42], [31, 41]];
+    
+            document.getElementById("character").style.left = horizontalPosition + "px";
+            document.getElementById("character").style.top = vertialPosition + "px";
+
+            console.log("Horizontal Position: "  + horizontalPosition);
+            console.log("Vertical Position: " + vertialPosition);
+
+            var direction = "down";
+            var counter = 2;
+            document.onkeydown = function(e){
+                var directionNum = 0;
+                var directionChange = true;
+
+                console.log(e)
+
+                if(e.keyCode == 37){//Left
+                    if( horizontalPosition > 0)
+                        horizontalPosition = horizontalPosition - 10;
+                    
+                    if(direction == "left")
+                        directionChange = false;
+                    
+                    direction = "left";
+                    directionNum = 3;
+                }
+                else if(e.keyCode == 39){//Right
+                    if(horizontalPosition < window.innerWidth - 26)
+                        horizontalPosition = horizontalPosition + 10;
+                    
+                    if(direction == "right")
+                        directionChange = false;
+                    
+                    direction = "right";
+                    directionNum = 2;
+                }
+                else if(e.keyCode == 40){//Down
+                    if(vertialPosition < window.innerHeight - 40)
+                        vertialPosition = vertialPosition + 10;
+                    
+                    if(direction == "down")
+                        directionChange = false;
+                
+                    direction = "down";    
+                    directionNum = 0;
+                }
+                else if(e.keyCode == 38 ){//Up
+                    if(vertialPosition > 0)
+                        vertialPosition = vertialPosition - 10;
+                        
+                    if(direction == "up")
+                        directionChange = false;
+                    
+                    direction = "up";
+                    directionNum  = 1;
+                }
+
+                counter = manageCounter(counter, directionChange);   
+                var index = getDimIndex(counter, directionNum);
+
+                var dimWidth  = dimensions[index][0];
+                var dimHeight = dimensions[index][1];
+
+                console.log(directionChange);
+                console.log(counter);
+                console.log(dimWidth);
+                console.log(dimHeight);
+                console.log(index);
+
+                var imageDirectory = imageDir(direction, counter);
+                update(horizontalPosition, vertialPosition, imageDirectory, dimWidth, dimHeight);
+            }
+
+            function manageCounter(currentCounter, change){
+                var newCounter = currentCounter + 1;
+                
+                if(newCounter > 3){
+                    newCounter = 1;
+                }
+
+                if(change){
+                    newCounter = 2;
+                }
+
+                return newCounter
+            }
+
+            function getDimIndex(counter, directionNum){
+                var offset = counter - 1;
+                return (directionNum * 3) + offset;
+            }
+
+            function update(horizontalPosition, vertialPosition, nextImage, width, height){
+                console.log(nextImage);
+                document.getElementById("character").style.left = horizontalPosition + "px";
+                document.getElementById("character").style.top = vertialPosition + "px";
+                document.getElementById("character").style.backgroundImage = "url('" + nextImage + "')";
+                document.getElementById("character").style.height = height;
+                document.getElementById("character").style.width = width;
+            }
+
+            function imageDir(direction, imageNum){
+                if(imageNum > 3)
+                    imageNum = 1;
+
+                var imageDirectory = "image/naruto_" + direction + imageNum + ".png"; 
+
+                return imageDirectory
+            }
+        </script>
+    </body>
+</html>
