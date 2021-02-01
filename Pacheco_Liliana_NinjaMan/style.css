@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#ninja{
+    display: block;
+    background-image: url("static/naruto/naruto_down2.png");
+    background-size: contain;
+    height: 40px;
+    width: 26px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#characterContainer{
+    display: inline-block;
+    background-size: contain;
+    position: absolute;
+    left: 40px;
+    top: 140px;
+    height: 40px;
+    width: 40px;
+}
+
+#ghost1{
+    background-size: contain;
+    position: absolute;
+    left: 480;
+    top: 140px;
+    height: 40px;
+    width: 40px;
+}
+
+#ghost2{
+    background-size: contain;
+    position: absolute;
+    left: 40px;
+    top: 500px;
+    height: 40px;
+    width: 40px;
+}
+
+.ghost{
+    background-image: url("static/naruto/ghost2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    
+}
+
+#scoreBoard{
+    height: 100px;
+    width: 560px;
+    background-color: black;
+}
+
+#scoreTittle{
+    text-align: center; 
+    font-family: Forte; 
+    font-size: 30px;
+
+}
+
+#scoreValue{
+    text-align: center;
+    font-family: Forte;
+    font-size: 25px;
+}
+
+#characterIcon{
+    display: inline-block;
+    background-image: url("static/naruto/icon.png");
+    background-size: contain;
+    height: 100px;
+    width: 100px;
+}
+
+#healthBar{
+    display: inline-block;
+    height: 100px;
+    width: 300px;
+    
+}
+
+#tittle{
+    background-image: url("static/naruto/name.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 60px;
+    width: 300px;
+}
+
+
+#health{
+    height: 40;
+    width: 320px;
+}
+
+#gameOver{
+    position: absolute;
+    background-color: f8e01c;
+    font-family: forte;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 290px;
+}
+
+.life{
+    display: inline-block;
+    background-image: url("static/naruto/life.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 30px;
+    width: 50px;
+}
+
+#scoreContainer{
+    background-color: #f8e01c;
+    display: inline-block;
+    vertical-align: top;
+    height: 100px;
+    width: 150px;
+}
+
+.wall {
+    display: inline-block;
+    background-image: url("static/environment/wall.png");
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+}
+
+.coin {
+    display:inline-block;
+    background-image: url("static/points/coin.gif");
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+}
+
+.ramen {
+    display:inline-block;
+    background-image: url("static/points/ramen.gif");
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+}
+
+.empty {
+    background-color: white;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+}
+
+
+
