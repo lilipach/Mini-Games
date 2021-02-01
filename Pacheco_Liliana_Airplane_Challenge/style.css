@@ -1,0 +1,45 @@
+html,body{
+    height: 100%
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#ocean{
+    background-image: url("static/background.png");
+    background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    border: solid;
+}
+
+.player{
+    position: absolute;
+    background-image: url("static/player.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 140px;
+    height: 75px;
+}
+
+.enemy{
+    position: absolute;
+    background-image: url("static/enemy.png");
+    background-size: contain;
+    width: 70px;
+    height: 75px;
+}
+
+.missile{
+    position: absolute;
+    background-image: url("static/missile.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 30px;
+}
