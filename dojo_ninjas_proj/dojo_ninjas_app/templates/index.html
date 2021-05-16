@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <title>Hello, world!</title>
+    </head>
+    <body>
+        <div class="d-flex jumbotron w-100" style="border: solid black;">
+            <div class="text-center w-50 p-4">
+                <h1 class="Lead mb-4">Add a Dojo</h1>
+                <form action="/submitDojo" method="POST" class="text-left">
+                    {% csrf_token %}
+                    <div class="form-row py-2">
+                        <label for="dojoName" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col">
+                            <input type="text" class="form-control" name="dojoName" id="dojoName">
+                        </div>  
+                    </div>
+                    <div class="form-row py-2">
+                        <label for="city" class="col-sm-2 col-form-label">City</label>
+                        <div class="col">
+                            <input type="text" class="form-control" name="city" id="city">
+                        </div>
+                    </div>
+                    <div class="form-row py-2">
+                        <label for="state" class="col-sm-2 col-form-label">State</label>
+                        <div class="col">
+                            <input type="text" class="form-control" name="state" id="state">
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="form-row justify-content-center"> 
+                        <button type="submit" class="btn btn-primary mt-4">Add</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="text-center w-50 p-4">
+                <h1 class="Lead mb-4">Add a Ninja</h1>
+                <form action="/submitNinja" method="POST" class="text-left">
+                    {% csrf_token %}
+                    <div class="form-row py-2">
+                        <label for="firstName" class="col-sm-2 col-form-label">First name</label>
+                        <div class="col">
+                            <input type="text" class="form-control" name="firstName" id="firstName">
+                        </div>
+                    </div>
+                    <div class="form-row py-2">
+                        <label for="lastName" class="col-sm-2 col-form-label">Last name</label>
+                        <div class="col">
+                            <input type="text" class="form-control" name="lastName" id="lastName">
+                        </div>
+                    </div>
+
+                    <div class="form-row py-2">
+                        <label for="dojoSelection" class="col-sm-2 col-form-label">Dojo</label>
+                        <div class="col">
+                            <select class="form-control" id="dojoSelection" name="dojoSelection">
+                                {% for dojo in dojos%}
+                                <option value="{{dojo.id}}">{{dojo.name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-center"> 
+                        <button type="submit" class="btn btn-primary mt-4">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="d-flex flex-column align-items-center jumbotron" style="border: solid black;">
+            <h1 class="Lead mb-4">All the Dojos</h1>
+                <!--For left justifivation-->
+                <div> 
+                    {% for dojo in dojos %}
+                    <h4> {{ dojo.name }}</h4>
+                    <ul>
+                        {% for ninja in dojo.ninjas.all%}
+                        <li>{{ninja.first_name}} {{ninja.last_name}}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endfor %}
+                </div>
+        </div>
+
+
+        
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>
