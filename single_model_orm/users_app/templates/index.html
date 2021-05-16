@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <title>Hello, world!</title>
+    </head>
+    <body>
+        <div class="jumbotron"> 
+            <h1 class="Lead text-center mb-4">All the Users</h1>
+                <table class="table table-bordered table-light my-4">
+                    <thead class="thead-dark">
+                        <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Age</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                        <tr>
+                            <th scope="row">{{user.id}}</th>
+                            <td>{{user.first_name}} {{user.last_name}}</td>
+                            <td>{{user.email_address}}</td>
+                            <td>{{user.age}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+        </div>
+
+        <div class="jumbotron text-center">
+            <h1 class="Lead mb-4">Add a User</h1>
+            <form action="/submitForm" method="POST" class="text-left">
+                {% csrf_token %}
+                <div class="form-row py-2">
+                    <label for="firstName" class="col-sm-2 col-form-label">First name</label>
+                    <div class="col">
+                        <input type="text" class="form-control" name="firstName" id="firstName">
+                    </div>
+
+                    <label for="lastName" class="col-sm-2 col-form-label">Last name</label>
+                    <div class="col">
+                        <input type="text" class="form-control" name="lastName" id="lastName">
+                    </div>
+                </div>
+
+                <div class="form-row py-2">
+                    <label for="email" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col">
+                        <input type="email" class="form-control" name="email" id="email">
+                    </div>
+
+                    <label for="age" class="col-sm-2 col-form-label">Age</label>
+                    <div class="col">
+                        <input type="text" class="form-control" name="age" id="age">
+                    </div>
+                </div>
+                
+                <div class="form-row justify-content-center"> 
+                    <button type="submit" class="btn btn-primary mt-4">Add</button>
+                </div>
+            </form>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>
