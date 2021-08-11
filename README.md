@@ -24,7 +24,7 @@ Intereting projects Includes:
     
 ![Ninja Challenge Gif](https://github.com/lilipach/Pre-Bootcamp-Public/blob/master/Project%20Gifs/ninja_challenge.gif)
     
-- Airplane Game
+# Airplane Game
     Done Features: 
     - random enemy airplane population and movement
     - player and missile movement
@@ -34,4 +34,6 @@ Intereting projects Includes:
     - scoreboard
     - levels
     - additional types of missiles
+    
+![Airplane Game](https://github.com/lilipach/Pre-Bootcamp-Public/blob/master/Project%20Gifs/Airplane%20Game.gif)
  
