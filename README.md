@@ -15,6 +15,8 @@ Intereting projects Includes:
     - Ghost timer (ghost movement when player doesn't )
     - Ability to eat ghost when ramen is eaten
     - improve ghost movement?
+
+![Naruto Pac Man Game](https://github.com/lilipach/Pre-Bootcamp-Public/blob/master/Project%20Gifs/Naruto_Pac_Man_Game.gif)
     
 - Ninja web controller (complete -- Pacheco_Liliana_Ninja_Challenge_2)
     Naruto character can run around in your web browser   
