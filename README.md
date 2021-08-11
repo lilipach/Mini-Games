@@ -2,7 +2,7 @@
 All Finished coding dojo bootcamp assignements are stored here. Additional features outside of assignment requirements are also stored and logged here. 
 
 Intereting projects Includes:
-- Naruto Pac Man game (mostly complete -- Pacheco_Liliana_NinjaMan)
+# Naruto Pac Man game (mostly complete -- Pacheco_Liliana_NinjaMan)
     Done Features:
     - Character movement
     - Ghost movement
@@ -17,9 +17,11 @@ Intereting projects Includes:
     - improve ghost movement?
 
 ![Naruto Pac Man Game](https://github.com/lilipach/Pre-Bootcamp-Public/blob/master/Project%20Gifs/Naruto_Pac_Man_Game.gif)
+ 
+ 
+# Ninja web controller (complete -- Pacheco_Liliana_Ninja_Challenge_2)
+    -Naruto character can run around in your web browser   
     
-- Ninja web controller (complete -- Pacheco_Liliana_Ninja_Challenge_2)
-    Naruto character can run around in your web browser   
 ![Ninja Challenge Gif](https://github.com/lilipach/Pre-Bootcamp-Public/blob/master/Project%20Gifs/ninja_challenge.gif)
     
 - Airplane Game
