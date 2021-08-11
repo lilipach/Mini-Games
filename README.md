@@ -1,7 +1,7 @@
 # Pre-Bootcamp-Public
-All Finished coding dojo bootcamp assignements are stored here. Additional features outside of assignment requirements are also stored and logged here. 
+Extra coding dojo assignments are stored and logged here
 
-Intereting projects Includes:
+Interesting projects Includes:
 # Naruto Pac Man game (mostly complete -- Pacheco_Liliana_NinjaMan)
     Done Features:
     - Character movement
