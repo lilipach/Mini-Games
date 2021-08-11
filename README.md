@@ -17,7 +17,8 @@ Intereting projects Includes:
     - improve ghost movement?
     
 - Ninja web controller (complete -- Pacheco_Liliana_Ninja_Challenge_2)
-    Naruto character can run around in you web browser
+    Naruto character can run around in you web browser   
+![Ninja Challenge Gif](https://github.com/lilipach/Pre-Bootcamp-Public/blob/master/Project%20Gifs/ninja_challenge.gif)
     
 - Airplane Game
     Done Features: 
