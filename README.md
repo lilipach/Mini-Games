@@ -1,4 +1,4 @@
-# Pre-Bootcamp-Public
+# Mini Games
 Extra coding dojo assignments are stored and logged here
 
 Interesting projects Includes:
